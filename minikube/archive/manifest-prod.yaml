@@ -1,0 +1,110 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-kube
+  labels:
+    app: hello-kube
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-kube
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: hello-kube
+        version: v1
+    spec:
+      containers:
+      - name: hello-kube
+        image: hello-kube:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: prod-service
+  labels:
+    app: hello-kube
+    version: v1
+    env: prod
+  namespace: prod
+spec: 
+  ports: 
+    - 
+      nodePort: 32056
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  sessionAffinity: None
+  type: NodePort
+  selector:
+    app: hello-kube
+    version: v1
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: prod
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: hello-kube.info
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prod-service
+                port:
+                  number: 8080
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hello-kube
+  namespace: prod
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: hello-kube
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Pods
+        value: 1
+        periodSeconds: 15
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15
+      - type: Pods
+        value: 4
+        periodSeconds: 15
+      selectPolicy: Max

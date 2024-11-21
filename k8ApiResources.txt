@@ -1,0 +1,142 @@
+NAME                              SHORTNAMES   APIVERSION                             NAMESPACED   KIND
+bindings                                       v1                                     true         Binding
+componentstatuses                 cs           v1                                     false        ComponentStatus
+configmaps                        cm           v1                                     true         ConfigMap
+endpoints                         ep           v1                                     true         Endpoints
+events                            ev           v1                                     true         Event
+limitranges                       limits       v1                                     true         LimitRange
+namespaces                        ns           v1                                     false        Namespace
+nodes                             no           v1                                     false        Node
+persistentvolumeclaims            pvc          v1                                     true         PersistentVolumeClaim
+persistentvolumes                 pv           v1                                     false        PersistentVolume
+pods                              po           v1                                     true         Pod
+podtemplates                                   v1                                     true         PodTemplate
+replicationcontrollers            rc           v1                                     true         ReplicationController
+resourcequotas                    quota        v1                                     true         ResourceQuota
+secrets                                        v1                                     true         Secret
+serviceaccounts                   sa           v1                                     true         ServiceAccount
+services                          svc          v1                                     true         Service
+mutatingwebhookconfigurations                  admissionregistration.k8s.io/v1        false        MutatingWebhookConfiguration
+validatingwebhookconfigurations                admissionregistration.k8s.io/v1        false        ValidatingWebhookConfiguration
+customresourcedefinitions         crd,crds     apiextensions.k8s.io/v1                false        CustomResourceDefinition
+apiservices                                    apiregistration.k8s.io/v1              false        APIService
+controllerrevisions                            apps/v1                                true         ControllerRevision
+daemonsets                        ds           apps/v1                                true         DaemonSet
+deployments                       deploy       apps/v1                                true         Deployment
+replicasets                       rs           apps/v1                                true         ReplicaSet
+statefulsets                      sts          apps/v1                                true         StatefulSet
+meshpolicies                                   authentication.istio.io/v1alpha1       false        MeshPolicy
+policies                                       authentication.istio.io/v1alpha1       true         Policy
+tokenreviews                                   authentication.k8s.io/v1               false        TokenReview
+localsubjectaccessreviews                      authorization.k8s.io/v1                true         LocalSubjectAccessReview
+selfsubjectaccessreviews                       authorization.k8s.io/v1                false        SelfSubjectAccessReview
+selfsubjectrulesreviews                        authorization.k8s.io/v1                false        SelfSubjectRulesReview
+subjectaccessreviews                           authorization.k8s.io/v1                false        SubjectAccessReview
+horizontalpodautoscalers          hpa          autoscaling/v1                         true         HorizontalPodAutoscaler
+cronjobs                          cj           batch/v1                               true         CronJob
+jobs                                           batch/v1                               true         Job
+certificatesigningrequests        csr          certificates.k8s.io/v1                 false        CertificateSigningRequest
+certificates                      cert,certs   certmanager.k8s.io/v1alpha1            true         Certificate
+challenges                                     certmanager.k8s.io/v1alpha1            true         Challenge
+clusterissuers                                 certmanager.k8s.io/v1alpha1            false        ClusterIssuer
+issuers                                        certmanager.k8s.io/v1alpha1            true         Issuer
+orders                                         certmanager.k8s.io/v1alpha1            true         Order
+backendconfigs                    bc           cloud.google.com/v1                    true         BackendConfig
+adapters                                       config.istio.io/v1alpha2               true         adapter
+apikeys                                        config.istio.io/v1alpha2               true         apikey
+attributemanifests                             config.istio.io/v1alpha2               true         attributemanifest
+authorizations                                 config.istio.io/v1alpha2               true         authorization
+bypasses                                       config.istio.io/v1alpha2               true         bypass
+checknothings                                  config.istio.io/v1alpha2               true         checknothing
+circonuses                                     config.istio.io/v1alpha2               true         circonus
+cloudwatches                                   config.istio.io/v1alpha2               true         cloudwatch
+deniers                                        config.istio.io/v1alpha2               true         denier
+dogstatsds                                     config.istio.io/v1alpha2               true         dogstatsd
+edges                                          config.istio.io/v1alpha2               true         edge
+fluentds                                       config.istio.io/v1alpha2               true         fluentd
+handlers                                       config.istio.io/v1alpha2               true         handler
+httpapispecbindings                            config.istio.io/v1alpha2               true         HTTPAPISpecBinding
+httpapispecs                                   config.istio.io/v1alpha2               true         HTTPAPISpec
+instances                                      config.istio.io/v1alpha2               true         instance
+kubernetesenvs                                 config.istio.io/v1alpha2               true         kubernetesenv
+kuberneteses                                   config.istio.io/v1alpha2               true         kubernetes
+listcheckers                                   config.istio.io/v1alpha2               true         listchecker
+listentries                                    config.istio.io/v1alpha2               true         listentry
+logentries                                     config.istio.io/v1alpha2               true         logentry
+memquotas                                      config.istio.io/v1alpha2               true         memquota
+metrics                                        config.istio.io/v1alpha2               true         metric
+noops                                          config.istio.io/v1alpha2               true         noop
+opas                                           config.istio.io/v1alpha2               true         opa
+prometheuses                                   config.istio.io/v1alpha2               true         prometheus
+quotas                                         config.istio.io/v1alpha2               true         quota
+quotaspecbindings                              config.istio.io/v1alpha2               true         QuotaSpecBinding
+quotaspecs                                     config.istio.io/v1alpha2               true         QuotaSpec
+rbacs                                          config.istio.io/v1alpha2               true         rbac
+redisquotas                                    config.istio.io/v1alpha2               true         redisquota
+reportnothings                                 config.istio.io/v1alpha2               true         reportnothing
+rules                                          config.istio.io/v1alpha2               true         rule
+signalfxs                                      config.istio.io/v1alpha2               true         signalfx
+solarwindses                                   config.istio.io/v1alpha2               true         solarwinds
+stackdrivers                                   config.istio.io/v1alpha2               true         stackdriver
+statsds                                        config.istio.io/v1alpha2               true         statsd
+stdios                                         config.istio.io/v1alpha2               true         stdio
+templates                                      config.istio.io/v1alpha2               true         template
+tracespans                                     config.istio.io/v1alpha2               true         tracespan
+zipkins                                        config.istio.io/v1alpha2               true         zipkin
+kongclusterplugins                kcp          configuration.konghq.com/v1            false        KongClusterPlugin
+kongconsumers                     kc           configuration.konghq.com/v1            true         KongConsumer
+kongingresses                     ki           configuration.konghq.com/v1            true         KongIngress
+kongplugins                       kp           configuration.konghq.com/v1            true         KongPlugin
+tcpingresses                                   configuration.konghq.com/v1beta1       true         TCPIngress
+udpingresses                                   configuration.konghq.com/v1beta1       true         UDPIngress
+leases                                         coordination.k8s.io/v1                 true         Lease
+endpointslices                                 discovery.k8s.io/v1                    true         EndpointSlice
+events                            ev           events.k8s.io/v1                       true         Event
+ingresses                         ing          extensions/v1beta1                     true         Ingress
+flowschemas                                    flowcontrol.apiserver.k8s.io/v1beta1   false        FlowSchema
+prioritylevelconfigurations                    flowcontrol.apiserver.k8s.io/v1beta1   false        PriorityLevelConfiguration
+istiooperators                    iop          install.istio.io/v1alpha1              true         IstioOperator
+capacityrequests                  capreq       internal.autoscaling.gke.io/v1alpha1   true         CapacityRequest
+nodes                                          metrics.k8s.io/v1beta1                 false        NodeMetrics
+pods                                           metrics.k8s.io/v1beta1                 true         PodMetrics
+storagestates                                  migration.k8s.io/v1alpha1              false        StorageState
+storageversionmigrations                       migration.k8s.io/v1alpha1              false        StorageVersionMigration
+monitoringdashboards                           monitoring.kiali.io/v1alpha1           true         MonitoringDashboard
+frontendconfigs                                networking.gke.io/v1beta1              true         FrontendConfig
+managedcertificates               mcrt         networking.gke.io/v1                   true         ManagedCertificate
+serviceattachments                             networking.gke.io/v1beta1              true         ServiceAttachment
+servicenetworkendpointgroups      svcneg       networking.gke.io/v1beta1              true         ServiceNetworkEndpointGroup
+destinationrules                  dr           networking.istio.io/v1beta1            true         DestinationRule
+envoyfilters                                   networking.istio.io/v1alpha3           true         EnvoyFilter
+gateways                          gw           networking.istio.io/v1beta1            true         Gateway
+serviceentries                    se           networking.istio.io/v1beta1            true         ServiceEntry
+sidecars                                       networking.istio.io/v1beta1            true         Sidecar
+virtualservices                   vs           networking.istio.io/v1beta1            true         VirtualService
+workloadentries                   we           networking.istio.io/v1beta1            true         WorkloadEntry
+ingressclasses                                 networking.k8s.io/v1                   false        IngressClass
+ingresses                         ing          networking.k8s.io/v1                   true         Ingress
+networkpolicies                   netpol       networking.k8s.io/v1                   true         NetworkPolicy
+runtimeclasses                                 node.k8s.io/v1                         false        RuntimeClass
+updateinfos                       updinf       nodemanagement.gke.io/v1alpha1         true         UpdateInfo
+poddisruptionbudgets              pdb          policy/v1                              true         PodDisruptionBudget
+podsecuritypolicies               psp          policy/v1beta1                         false        PodSecurityPolicy
+clusterrolebindings                            rbac.authorization.k8s.io/v1           false        ClusterRoleBinding
+clusterroles                                   rbac.authorization.k8s.io/v1           false        ClusterRole
+rolebindings                                   rbac.authorization.k8s.io/v1           true         RoleBinding
+roles                                          rbac.authorization.k8s.io/v1           true         Role
+clusterrbacconfigs                             rbac.istio.io/v1alpha1                 false        ClusterRbacConfig
+rbacconfigs                                    rbac.istio.io/v1alpha1                 true         RbacConfig
+servicerolebindings                            rbac.istio.io/v1alpha1                 true         ServiceRoleBinding
+serviceroles                                   rbac.istio.io/v1alpha1                 true         ServiceRole
+priorityclasses                   pc           scheduling.k8s.io/v1                   false        PriorityClass
+authorizationpolicies                          security.istio.io/v1beta1              true         AuthorizationPolicy
+peerauthentications               pa           security.istio.io/v1beta1              true         PeerAuthentication
+requestauthentications            ra           security.istio.io/v1beta1              true         RequestAuthentication
+volumesnapshotclasses                          snapshot.storage.k8s.io/v1             false        VolumeSnapshotClass
+volumesnapshotcontents                         snapshot.storage.k8s.io/v1             false        VolumeSnapshotContent
+volumesnapshots                                snapshot.storage.k8s.io/v1             true         VolumeSnapshot
+csidrivers                                     storage.k8s.io/v1                      false        CSIDriver
+csinodes                                       storage.k8s.io/v1                      false        CSINode
+csistoragecapacities                           storage.k8s.io/v1beta1                 true         CSIStorageCapacity
+storageclasses                    sc           storage.k8s.io/v1                      false        StorageClass
+volumeattachments                              storage.k8s.io/v1                      false        VolumeAttachment
